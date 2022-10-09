@@ -14,10 +14,10 @@ if memo_type == 1
   end
 elsif memo_type == 2
   puts"拡張子を除いた編集するファイル名を入力してください"
-  csv_name = gets
+  csv_name = gets.chomp
   until FileTest.exist?("#{csv_name}.csv") do
   puts"該当ファイル名を確認しもう一度入力してください"
-  csv_name = gets
+  csv_name = gets.chomp
   end
   file = CSV.open("#{csv_name}.csv","a+")
   puts"メモの内容を編集してください"
